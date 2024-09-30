@@ -8,17 +8,17 @@ import org.simplejavamail.mailer.MailerBuilder;
 
 public class SimpleJava {
 
-    public void notifySendJob() implements ISendEmail{
+    public void notifySendJob() implements IEmailPlugin{
 
         @Override
-        public void notifySendJob(Conference con,User us){
+        public void notifySendJob(Paper job, Conference confe,User author){
             Mailer ma= MailerBuilder.withSMTPServer("smtp.gmail.com", 587, "cuychair@gmail.com", "cies amcp hfot rxhh")
                     .withTransportStrategy(TransportStrategy.SMTP_TLS)
                     .buildMailer();
 
             Email email= EmailBuilder.startingBlank()
                     .from("Notificaciones cuyChair","cuychair@gmail.com")
-                    .to("Hola",usuario.getEmail())
+                    .to("Hola",author.getEmail())
                     .withSubject("Estado de los productos")
                     .withPlainText("Los productos se agregaron correctamente")
                     .buildEmail();
