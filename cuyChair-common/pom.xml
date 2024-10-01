@@ -10,4 +10,11 @@
         <maven.compiler.source>22</maven.compiler.source>
         <maven.compiler.target>22</maven.compiler.target>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>unicauca.edu.co</groupId>
+            <artifactId>CuyChair</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
 </project>
