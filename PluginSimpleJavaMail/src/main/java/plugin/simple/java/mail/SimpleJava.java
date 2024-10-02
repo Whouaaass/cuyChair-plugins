@@ -20,11 +20,12 @@ public class SimpleJava implements IEmailPlugin {
         Email email= EmailBuilder.startingBlank()
                 .from("Notificaciones cuyChair","cuychair@gmail.com")
                 .to("Hola",author.getUserEmail())
-                .withSubject("Estado de los productos")
+                .withSubject("Notificacion de trabajos")
                 .withPlainText("Estimado autor\n\n\n" +
                         "Notificamos que se recibió de forma exitosa su trabajo para la Conferencia: "+conference.getTitle()+"\n\n"
                         +"Autor: "+author.getUserName()+"\n"
-                        +"Trabajo: "+paper.getTitle()+"\n\n\n\n"
+                        +"Trabajo: "+paper.getTitle()+"\n"
+                        +"Descripción: "+paper.getDescription()+"\n"
                         +"Gracias por todo su esfuerzo :)")
                 .buildEmail();
 
